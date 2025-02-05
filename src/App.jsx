@@ -9,6 +9,7 @@ import history from "../src/assets/books/history.json";
 import horror from "../src/assets/books/horror.json";
 import romance from "../src/assets/books/romance.json";
 import scifi from "../src/assets/books/scifi.json";
+import BookList from "./components/BookList";
 let genres = ["Fantasy", "History", "Horror", "Romance", "SciFi"];
 let allBooks = [...fantasy, ...history, ...horror, ...romance, ...scifi];
 
@@ -26,9 +27,7 @@ function App() {
             </option>
           ))}
         </select>
-        <Row className="row-cols-5 gy-5 mt-1">
-          <AllTheBooks />
-        </Row>
+        <BookList />
       </div>
       <MyFooter />
     </>

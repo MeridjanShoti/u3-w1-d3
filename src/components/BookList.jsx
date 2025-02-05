@@ -2,20 +2,20 @@ import fantasy from "../assets/books/fantasy.json";
 import { Component } from "react";
 import SingleBook from "./SingleBook";
 import { Form, Row } from "react-bootstrap";
-
-function handleSubmit(e) {
-  e.preventDefault();
-  let search = document.getElementById("search");
-  this.setState({
-    searchedWords: search.value,
-  });
-}
 class BookList extends Component {
   state = { searchedWords: "" };
   render() {
     return (
       <>
-        <Form onSubmit={handleSubmit}>
+        <Form
+          onSubmit={(e) => {
+            e.preventDefault();
+            let search = document.getElementById("search");
+            this.setState({
+              searchedWords: search.value,
+            });
+          }}
+        >
           <label htmlFor="search">Cerca tra i libri</label>
           <input type="text" id="search" className="mx-2" />
           <button type="submit">Search</button>

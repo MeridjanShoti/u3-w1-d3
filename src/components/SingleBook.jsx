@@ -11,7 +11,6 @@ class SingleBook extends Component {
             src={this.props.imgUrl}
             style={{ height: "300px", objectFit: "contain" }}
             onClick={() => {
-              console.log(this.state.selected);
               if (this.state.selected === false) {
                 this.setState({
                   selected: true,

@@ -1,4 +1,3 @@
-import fantasy from "../assets/books/fantasy.json";
 import { Component } from "react";
 import SingleBook from "./SingleBook";
 import { Form, Row } from "react-bootstrap";
@@ -22,7 +21,7 @@ class BookList extends Component {
         </Form>
 
         <Row id="bookRow" className="row-cols-2 row-cols-md-3 row-cols-lg-5 gy-5 mt-1">
-          {fantasy
+          {this.props.genre
             .filter((search) => search.title.toLowerCase().includes(this.state.searchedWords))
             .map((book) => (
               <SingleBook
